@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import random
 
 EMOJI = {-1: '\u2612', 0: ' ', 1: '\u2610'}
 
@@ -10,6 +11,16 @@ class ChompGame:
 
     def __repr__(self):
         pass
+
+    def coin_toss(self):
+        print(random.choice(['heads','tails']))
+    def game_over(self):
+        pass
+        # if ___ == ___
+        #print("GAME OVER")
+        #again = input("Play again? [Y]/n:").lower()
+        #if again == "n":
+        #break
 
 
 class Board:
@@ -32,7 +43,8 @@ class Board:
         return str(board_df)
 
     def take(self, row, col):
-        pass
+        for r in range(row + 1):
+            self.state[r][col:] = 0
 
     
 class Player:
